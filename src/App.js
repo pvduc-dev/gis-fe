@@ -14,6 +14,7 @@ function App() {
         mapStyle="https://tiles.pvduc.dev/light.json"
       >
         <Source type="geojson" id="vessels" data="https://gis-be-production.up.railway.app/vessels?perPage=1000">
+          <Card/>
           <Layer
             type="symbol"
             id="vessels"
@@ -22,7 +23,6 @@ function App() {
               'icon-allow-overlap': true,
             }}
           />
-          <Card/>
         </Source>
       </Map>
     </div>

@@ -8,7 +8,8 @@ const Card = () => {
     map?.loadImage('/vessel.png', (error, result) => {
       map.addImage('vessel', result);
     })
-  }, [map])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   function inputChangeHandler(event) {
     setNumOfVessel(event.target.value)
   }
