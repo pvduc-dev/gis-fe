@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useMap} from "react-map-gl";
+import axios from "axios";
 
 const Card = () => {
   const [numOfVessel, setNumOfVessel] = useState('');
@@ -10,12 +11,18 @@ const Card = () => {
     })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  function inputChangeHandler(event) {
-    setNumOfVessel(event.target.value)
+  async function inputChangeHandler(event) {
+    setNumOfVessel(event.target.value);
+
   }
 
-  function applyClickHandler() {
-    map.getSource('vessels').setData(`https://gis-be-production.up.railway.app/vessels?perPage=${numOfVessel}`)
+  async function applyClickHandler() {
+    const {data} = await axios.get('https://gis-be-production.up.railway.app/vessels', {
+      params: {
+        perPage: numOfVessel
+      }
+    })
+    map.getSource('vessels').setData(data);
   }
 
   return (
