@@ -14,7 +14,7 @@ const Card = () => {
   }
 
   function applyClickHandler() {
-    map.getSource('vessels').setData(`${process.env.REACT_APP_BACKEND_BASEURL}/vessels?perPage=${numOfVessel}`)
+    map.getSource('vessels').setData(`https://gis-be-production.up.railway.app/vessels?perPage=${numOfVessel}`)
   }
 
   return (
