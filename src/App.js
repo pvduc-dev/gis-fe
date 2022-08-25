@@ -3,7 +3,6 @@ import Map, {Source, Layer} from 'react-map-gl';
 import maplibregl from 'maplibre-gl';
 import './App.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
-import {useState} from "react";
 import Card from "./Card";
 
 function App() {
