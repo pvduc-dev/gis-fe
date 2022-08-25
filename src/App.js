@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Map, {Source, Layer} from 'react-map-gl';
-import maplibregl from 'maplibre-gl';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+import maplibregl from '!maplibre-gl';
 import './App.css';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import Card from "./Card";
